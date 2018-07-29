@@ -7,15 +7,19 @@ namespace ExtraLongFactorials
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a numeric value ");
-            ExtraLongFactorials(EnterIntValue());
-            Console.ReadKey();
+            while (true)
+            {
+                Console.WriteLine("Enter a numeric value ");
+                ExtraLongFactorials(EnterIntValue());
+            }
+            //Console.ReadKey();
         }
 
-        private static int EnterIntValue()
+        private static BigInteger EnterIntValue()
         {
-            int c;
-            while(!int.TryParse(Console.ReadLine(), out c))
+            BigInteger c = new BigInteger(1);
+            
+            while(!BigInteger.TryParse(Console.ReadLine(), out c))
             {
                 Console.WriteLine("Enter a numeric valid value");
             }
@@ -23,11 +27,12 @@ namespace ExtraLongFactorials
             return c;
         }
 
-        static void ExtraLongFactorials(int n)
+        static void ExtraLongFactorials(BigInteger n)
         {
 
             //long result = 1;
             BigInteger result = new BigInteger(1);
+            
 
             for (int i = 0; i < n; i++)
             {
